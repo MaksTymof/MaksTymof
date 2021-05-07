@@ -1,32 +1,40 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+<template lang="html">
+  <div class="app">
+        <Home class="inner-padding"/>
+        <OurInfo class="inner-padding minus-margin-top"/>
   </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import Home from "@/views/Home"
+import OurInfo from "@/views/OurInfo"
+export default {
+  components:{
+    Home,
+    OurInfo,
   }
 }
+
+</script>
+<style lang="sass">
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+html
+  scroll-behavior: smooth
+.inner-padding
+  padding: 25px
+.minus-margin-top
+  margin-top: -55px
+.app
+  width: 100%
+  min-height: 100vh
+  display: flex
+  padding: 150px 150px 55px
+  background-image: url('./img/pop-bg.jpg')
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  color: #fff
+  font-family: 'Quicksand', sans-serif
 </style>
